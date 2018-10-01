@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 TODO: What things you need to install the software and how to install them
 
 ```
-Python 3.5
+Python 3.6
 Django 2.1.1
 Tensorflow 1.10
 ```
