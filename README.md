@@ -68,8 +68,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Cecil Beeland** - *Initial work* - [beelandc](https://github.com/beelandc)
-* **Camille Rosewright** - *Initial work* - [](https://github.com/kamiyokamiru)
-* **Wunyan Wong** - *Initial work* - [](https://github.com/wunyanw)
+* **Camille Rosewright** - *Initial work* - [kamiyokamiru](https://github.com/kamiyokamiru)
+* **Wunyan Wong** - *Initial work* - [wunyanw](https://github.com/wunyanw)
 * **Greg Zimmerman** - *Initial work* - [TODO](https://github.com/)
 
 
