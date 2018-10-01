@@ -1,7 +1,3 @@
-Tech Stack:
- * Python 3.5 
- * 
-
 # Artwork Image Processor
 
 This is a Django application that leverages the Tensorflow library to transfer painting styles onto images.
