@@ -12,7 +12,7 @@ TODO: What things you need to install the software and how to install them
 
 ```
 Python 3.6
-Django 2.1.1
+Django 2.1.2
 Tensorflow 1.10
 ```
 
