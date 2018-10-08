@@ -1,11 +1,11 @@
 from django import forms
-from artwork_image_processor.models import Image
+from artwork_image_processor.models import Document
 
 class UploadFileForm(forms.Form):
     title = forms.CharField(max_length=50)
     file = forms.FileField()
 
-class ImageForm(forms.ModelForm):
+class DocumentForm(forms.ModelForm):
     class Meta:
-        model = Image
-        fields = ('description', 'image', )
+        model = Document
+        fields = ('description', 'document', )

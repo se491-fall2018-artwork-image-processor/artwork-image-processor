@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Image(models.Model):
+class Document(models.Model):
     description = models.CharField(max_length=255, blank=True)
-    image = models.FileField(upload_to='static/')
+    document = models.FileField(upload_to='tmp/')
     uploaded_at = models.DateTimeField(auto_now_add=True)

@@ -3,20 +3,20 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 
-from artwork_image_processor.models import Image
-from artwork_image_processor.forms import ImageForm
+from artwork_image_processor.models import Document
+from artwork_image_processor.forms import DocumentForm
 
 # Create your views here.
 
 def home(request):
-    images = Image.objects.all()
-    return render(request, 'home.html', { 'images': images })
+    documents = Document.objects.all()
+    return render(request, 'home.html', { 'documents': documents })
 
 def simple_upload(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
-        filename = fs.save('static/'+myfile.name, myfile)
+        filename = fs.save('tmp/'+myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         return render(request, 'simple_upload.html', {
             'uploaded_file_url': uploaded_file_url
@@ -25,17 +25,12 @@ def simple_upload(request):
 
 def model_form_upload(request):
     if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
+        form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            #return redirect('artwork_image_processor.views.home')
-            content = {
-                'form': form,
-            }
-            return render(request, 'model_form_upload.html', content)
+            return redirect('artwork_image_processor.views.home')
     else:
-        if 'form' not in locals():
-            form = ImageForm()
+        form = DocumentForm()
     return render(request, 'model_form_upload.html', {
         'form': form
     })
