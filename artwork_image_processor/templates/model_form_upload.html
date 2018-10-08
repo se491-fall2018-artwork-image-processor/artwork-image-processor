@@ -7,5 +7,7 @@
     <button type="submit">Upload</button>
   </form>
 
+  <img src="{{form.model.image}}" height="200" width="250" border="1"/>
+
   <p><a href="{% url 'artwork_image_processor.views.home' %}">Return to home</a></p>
 {% endblock %}
