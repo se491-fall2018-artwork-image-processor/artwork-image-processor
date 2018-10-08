@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 
@@ -16,7 +16,7 @@ def simple_upload(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
-        filename = fs.save(myfile.name, myfile)
+        filename = fs.save('tmp/'+myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         return render(request, 'simple_upload.html', {
             'uploaded_file_url': uploaded_file_url
@@ -28,7 +28,7 @@ def model_form_upload(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('artwork_image_processor.views.home')
     else:
         form = DocumentForm()
     return render(request, 'model_form_upload.html', {
