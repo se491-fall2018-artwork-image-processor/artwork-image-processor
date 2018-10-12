@@ -7,7 +7,7 @@ from django.core.files.storage import FileSystemStorage
 from artwork_image_processor.models import Document
 from artwork_image_processor.forms import DocumentForm
 
-from style import run_style_transfer
+from artwork_image_processor.style import run_style_transfer
 
 # Create your views here.
 
