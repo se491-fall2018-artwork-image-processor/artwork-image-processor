@@ -27,4 +27,10 @@ class ViewsTestCase(TestCase):
         resp = self.client.get(url)
 
         self.assertEqual(resp.status_code, 200)
+        
+    def test_image_view(self):
+        url = reverse("artwork_image_processor.views.image")
+        resp = self.client.get(url)
+        
+        self.assertEqual(resp.status_code, 200)
 

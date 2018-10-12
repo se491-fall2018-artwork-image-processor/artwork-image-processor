@@ -12,3 +12,5 @@ from django.test import TestCase
 #
 #        self.assertEqual(resp.status_code, 200)
 #        self.assertIn(w.title, resp.content)
+
+# TODO: test image upload
