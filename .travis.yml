@@ -1,9 +1,16 @@
 language: python
 python:
     - "3.6.5"
+    
+#before_install:
+#  - export DJANGO_SETTINGS_MODULE=your_project.settings
+#  - export PYTHONPATH=$HOME/builds/your_github_username/your_repo
+  
 #command to install
 install:
+    - pip install -r requirements.txt
     - pip install Django==2.1.2
+    
 #command to run tests
 script:
     - python manage.py test
