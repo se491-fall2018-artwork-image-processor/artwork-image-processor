@@ -1,0 +1,13 @@
+language: python
+python:
+    -"3.6"
+#command to run tests
+script:
+    - python manage.py test tests
+    
+notifications:
+    emails:
+        recipients:
+            - wunyanw@gmail.com
+        on_success: never
+        on_failure: always
