@@ -6,7 +6,7 @@ install:
     - pip install Django==2.1.2
 #command to run tests
 script:
-    - python manage.py test tests
+    - python manage.py test
     
 notifications:
     emails:
