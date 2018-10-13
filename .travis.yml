@@ -3,8 +3,8 @@ python:
     - "3.6.5"
 
 # setup environment
-env:
-- DJANGO_VERSION=2.1.2
+#env:
+#   - DJANGO_VERSION=2.1.2
 
 before_install:
     - cd $TRAVIS_BUILD_DIR
@@ -16,7 +16,7 @@ before_install:
 install:
 #    - pip install .
     - pip install -r requirements.txt
-#    - pip install Django==2.1.2
+    - pip install Django==2.1.2
     
 #before_script: cd artwork-image-processor
 
