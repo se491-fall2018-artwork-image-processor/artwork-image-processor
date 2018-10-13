@@ -7,7 +7,8 @@ env:
 - DJANGO_VERSION=2.1.2
 
 before_install:
-    - cd project artwork-image-processor
+    - cd $TRAVIS_BUILD_DIR
+#  - cd project artwork-image-processor
 #  - export DJANGO_SETTINGS_MODULE=your_project.settings
 #  - export PYTHONPATH=$HOME/builds/your_github_username/your_repo
   
