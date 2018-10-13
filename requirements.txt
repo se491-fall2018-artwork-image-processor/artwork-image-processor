@@ -1,0 +1,4 @@
+#Dev
+# Add any you want to install as a third party library
+# pyperclip
+# pygame
