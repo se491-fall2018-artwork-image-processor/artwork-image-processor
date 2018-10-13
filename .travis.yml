@@ -1,7 +1,12 @@
 language: python
 python:
     - "3.6.5"
-    
+
+# setup environment
+env:
+- DJANGO_VERSION=2.1.2
+- DJANGO_SETTINGS_MODULE='artwork_image_processor_site'
+
 #before_install:
 #  - export DJANGO_SETTINGS_MODULE=your_project.settings
 #  - export PYTHONPATH=$HOME/builds/your_github_username/your_repo
@@ -10,7 +15,7 @@ python:
 install:
 #    - pip install .
     - pip install -r requirements.txt
-    - pip install Django==2.1.2
+#    - pip install Django==2.1.2
     
 before_script: cd project  
 
