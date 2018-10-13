@@ -5,7 +5,6 @@ python:
 # setup environment
 env:
 - DJANGO_VERSION=2.1.2
-- DJANGO_SETTINGS_MODULE='artwork_image_processor_site'
 
 #before_install:
 #  - export DJANGO_SETTINGS_MODULE=your_project.settings
@@ -17,7 +16,7 @@ install:
     - pip install -r requirements.txt
 #    - pip install Django==2.1.2
     
-before_script: cd project  
+before_script: cd artwork-image-processor  
 
 #command to run tests
 script:
