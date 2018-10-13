@@ -10,8 +10,10 @@ python:
 install:
 #    - pip install .
     - pip install -r requirements.txt
-#    - pip install Django==2.1.2
+    - pip install Django==2.1.2
     
+before_script: cd project  
+
 #command to run tests
 script:
 #    - python manage.py makemigrations
