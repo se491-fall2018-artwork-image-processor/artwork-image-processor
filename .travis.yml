@@ -1,0 +1,26 @@
+language: python
+python:
+    - "3.6.5"
+
+# setup environment
+#env:
+
+#before_install:
+  
+#command to install
+install:
+    - pip install -r requirements.txt
+    - pip install Django==2.1.2
+    
+#before_script: cd artwork-image-processor
+
+#command to run tests
+script:
+    - python manage.py test
+    
+notifications:
+    emails:
+        recipients:
+            - wunyanw@gmail.com
+        on_success: never
+        on_failure: always
