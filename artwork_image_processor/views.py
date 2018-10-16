@@ -4,8 +4,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 
-from artwork_image_processor.models import Document
-from artwork_image_processor.forms import DocumentForm
+from artwork_image_processor.models import Image
+from artwork_image_processor.forms import ImageForm
 
 from artwork_image_processor.style import run_style_transfer
 
@@ -13,14 +13,14 @@ from artwork_image_processor.style import run_style_transfer
 
 # our current default home page
 def home(request):
-    documents = Document.objects.all()
-    return render(request, 'home.html', { 'documents': documents })
+    images = Image.objects.all()
+    return render(request, 'home.html', { 'images': images })
 
 def simple_upload(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
-        filename = fs.save('tmp/'+myfile.name, myfile)
+        filename = fs.save('static/'+myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         return render(request, 'simple_upload.html', {
             'uploaded_file_url': uploaded_file_url
@@ -30,16 +30,26 @@ def simple_upload(request):
 # this model form upload is being used for the style transfer
 def model_form_upload(request):
     if request.method == 'POST':
-        form = DocumentForm(request.POST, request.FILES)
-        if form.is_valid():
+        imageForm = ImageForm(request.POST, request.FILES)
+        if imageForm.is_valid():
+           
             # the uploaded image is passed to the style transfer method
-            run_style_transfer(form.save())
-            # returns to transformed image result page
-            return redirect('artwork_image_processor.views.image')
+            run_style_transfer(imageForm.save())
+           
+            #return redirect('artwork_image_processor.views.image')
+            
+            image = Image.objects.get(description=imageForm.cleaned_data['description']) 
+            content = {
+                'imageForm': imageForm,
+                'image': image,
+                #'image': request.FILES['imageFile'], 
+            }
+            return render(request, 'model_form_upload.html', content)
     else:
-        form = DocumentForm()
+        #if 'imageForm' not in locals():
+        imageForm = ImageForm() 
     return render(request, 'model_form_upload.html', {
-        'form': form
+        'imageForm': imageForm,  
     })
 
 # result transformed image result page

@@ -3,7 +3,7 @@
 # By default, this will discover tests in any file named “test*.py” under the current working directory.
 
 from django.test import TestCase
-from artwork_image_processor.models import Document
+from artwork_image_processor.models import Image
 
 # Create your tests here.
 #    def test_whatever_list_view(self):
@@ -17,9 +17,9 @@ from artwork_image_processor.models import Document
 # to test our document model
 class ModelTestCase(TestCase):
 		
-	def test_document_description(self):
-		doc = Document(description="test create desc")
-		self.assertEqual("test create desc", doc.description)
+	def test_image_description(self):
+		img = Image(description="test create desc")
+		self.assertEqual("test create desc", img.description)
 
 
 
