@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Document
+from .models import Image
 
 # Register your models here.
 
 # this allows us to modify our models from the browser
 # $ python manage.py createsuperuser
-admin.site.register(Document)
+admin.site.register(Image)

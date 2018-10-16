@@ -3,9 +3,13 @@
 {% block content %}
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ imageForm.as_p }}
     <button type="submit">Upload</button>
   </form>
+
+  {% if image %}
+  <img src="{{image.imageFile.url}}" height="200" width="250" border="1"/>
+  {% endif %}
 
   <p><a href="{% url 'artwork_image_processor.views.home' %}">Return to home</a></p>
 {% endblock %}
