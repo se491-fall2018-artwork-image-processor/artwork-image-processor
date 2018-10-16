@@ -6,7 +6,7 @@
 from PIL import Image
 
 def run_style_transfer(img):
-    image = Image.open(img.document)
+    image = Image.open(img.imageFile)
     generatedImage = image.convert(mode='L')
     generatedImage.save('L.png')
     
