@@ -34,19 +34,15 @@ def model_form_upload(request):
         if imageForm.is_valid():
            
             # the uploaded image is passed to the style transfer method
-            run_style_transfer(imageForm.save())
-           
-            #return redirect('artwork_image_processor.views.image')
-            
-            image = Image.objects.get(description=imageForm.cleaned_data['description']) 
+            uploadedImage = imageForm.save()
+            styledImage = run_style_transfer(uploadedImage)
+             
             content = {
                 'imageForm': imageForm,
-                'image': image,
-                #'image': request.FILES['imageFile'], 
+                'image': styledImage, 
             }
             return render(request, 'model_form_upload.html', content)
     else:
-        #if 'imageForm' not in locals():
         imageForm = ImageForm() 
     return render(request, 'model_form_upload.html', {
         'imageForm': imageForm,  
