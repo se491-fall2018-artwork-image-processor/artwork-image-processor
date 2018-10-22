@@ -14,11 +14,10 @@ TODO: What things you need to install the software and how to install them
 Python 3.6
 Django 2.1.2
 Tensorflow 1.10
+Bootstrap 4.1.3
 ```
 
 ### Installing
-
-TODO: A step by step series of examples that tell you how to get a development env running
 
 Navigate to the project root in your command line / terminal and run the `runserver` command to start the development server 
 
@@ -31,7 +30,11 @@ In a browser, navigate to `http://localhost:8000' to load the root webpage
 
 ## Running the tests
 
-TODO: Explain how to run the automated tests for this system
+Run the following commands to execute the test suite:
+
+```
+python manage.py test
+```
 
 ### Break down into end to end tests
 
@@ -70,7 +73,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Cecil Beeland** - *Initial work* - [beelandc](https://github.com/beelandc)
 * **Camille Rosewright** - *Initial work* - [kamiyokamiru](https://github.com/kamiyokamiru)
 * **Wunyan Wong** - *Initial work* - [wunyanw](https://github.com/wunyanw)
-* **Greg Zimmerman** - *Initial work* - [TODO](https://github.com/)
+* **Greg Zimmerman** - *Initial work* - [gjz999gitit](https://github.com/gjz999gitit)
 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
