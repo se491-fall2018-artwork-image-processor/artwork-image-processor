@@ -1,28 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
   <h1>Artwork Image Processor</h1>
   
-  <p>Leverages the Tensorflow library to transfer painting styles onto images!</p>
-  
-  {% load static %}
+  <p>This is a Django application that leverages the Tensorflow library to transfer painting styles onto images.</p>
+  <p/>
+
   <h1>
     <img src="{% static "example/example_unprocessed_image.jpg" %}" alt="Image" width="169" height="169" />
     <img src="{% static "example/example_style_artwork.jpg" %}" alt="Image" width="169" height="169" /> 
     <img src="{% static "example/example_processed_image.jpg" %}" alt="Image" width="169" height="169" />
   </h1>
 
-  <h1></h1>
-  <h1></h1>
+  <p/>
+  
+  <p>
+    Created for DePaul SE491 Software Engineering Capstone
 
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ imageForm.as_p }}
-    <button type="submit">Upload</button>
-  </form>
-
-  {% if image %}
-  <img src="{{image.imageFile.url}}" height="200" width="250" border="1"/>
-  {% endif %}
+    By:
+     <ul>
+       <li>Camille Rosewright</li>
+       <li>Cecil Beeland</li>
+       <li>Greg Zimmerman</li>
+       <li>Wunyan Wong</li>
+     </ul>
+  </p>
 
 {% endblock %}

@@ -12,25 +12,20 @@ class ViewsTestCase(TestCase):
         #w = self.create_whatever()
         url = reverse("artwork_image_processor.views.home")
         resp = self.client.get(url)
-
         self.assertEqual(resp.status_code, 200)
         #self.assertIn(w.title, resp.content)
-
-    def test_simple_upload_view(self):
-        url = reverse("artwork_image_processor.views.simple_upload")
-        resp = self.client.get(url)
-
-        self.assertEqual(resp.status_code, 200)
-
-    def test_model_form_upload_view(self):
-        url = reverse("artwork_image_processor.views.model_form_upload")
-        resp = self.client.get(url)
-
-        self.assertEqual(resp.status_code, 200)
         
     def test_image_view(self):
         url = reverse("artwork_image_processor.views.image")
         resp = self.client.get(url)
-        
         self.assertEqual(resp.status_code, 200)
 
+    def test_images_view(self):
+        url = reverse("artwork_image_processor.views.images")
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+
+    def test_about_view(self):
+        url = reverse("artwork_image_processor.views.about")
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
