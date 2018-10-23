@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <p>Uploaded files:</p>
+  <ul>
+    {% for obj in images %}
+      <li>
+	<img src="{{ obj.imageFile.url }}" height="200" width="250" border="1"/>
+        <a href="{{ obj.imageFile.url }}">{{ obj.imageFile.name }}</a>
+        <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
