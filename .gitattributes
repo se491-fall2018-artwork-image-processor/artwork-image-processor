@@ -1,0 +1,4 @@
+# Tells github what paths contain vendor code so that the project statistics are correctly reported
+# https://github.com/github/linguist#vendored-code
+media/static/bootstrap/css/* linguist-vendored
+media/static/bootstrap/js/* linguist-vendored
