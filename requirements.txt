@@ -3,3 +3,6 @@
 # pyperclip
 # pygame
 pillow
+numpy
+tensorflow
+
