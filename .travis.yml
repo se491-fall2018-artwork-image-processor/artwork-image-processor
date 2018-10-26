@@ -15,18 +15,11 @@ install:
 
 #command to run tests
 script:
-	- python manage.py test
-	
-deploy:
-	provider: heroku
-	app: art-processor
-	api_key: 
-		secure: "mGGR45GOFpiP8GcWnt0DRahiDT2ZtufqopxS1ghGCWBaRp/p+hTJbKEFVV25TvwtY8OBHX2p+pIZUVQw7Io5Y4Y7Udzenc4keu1H6KLcvfilujAckhHS8b+ObePtayBh7CZ9qsybYP1osRpOaPtlchPyKtmTaOywfUrm6vZoOAK4jVn5Gu5N8YpAFHVL08Smzve8TS0QSfdd89em9ojpAJk1ho6upWJtqVFw9ALXiW3rmE5W2vzlcmdcty/kRCZF8uFgsrDMBmKfk/xYLysoyLbJIgaZw8mOZYha4PPiIORJCWIBFmwnkCkQAeJigElDMRZfQ3+1VD6xXgpuy6v7bccgNB8MO3jcFNasTj6/7zQW0Hp/cvCIm9uygcXLVHf/DhRrEYVITEyFRhbP3kEEB0Qo5XAgSeZZ3ap362a13wKIZWhIl4gD122xrzdyuONrQ6APciochk3AdC4PHEoAi62oZZ3pir56HGXIrLDcc2cRNze51hVJZd5yUob+bctu1E3kfJmAiFjqAzAEfpyX0NpNHfh97/54VlCXe2vLl4nFlMbt9+WreN7GFg9ZgP63i4gX8qx+HRMe82fr/weQgOKJQsqywJX42iUnCeVN++IxkcwSY1KhPrWxVQGCA5gnkUPmXgto4cM/lW+IWPnKelovwVKWXDZq5EnNzjsnUe8=" 
-	
+    - python manage.py test
+    
 notifications:
     emails:
         recipients:
             - wunyanw@gmail.com
-			- envpcamille@gmail.com
         on_success: never
         on_failure: always
