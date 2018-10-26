@@ -27,6 +27,6 @@ notifications:
     emails:
         recipients:
             - wunyanw@gmail.com
-            - envpcamille@gmail.com
+			- envpcamille@gmail.com
         on_success: never
         on_failure: always
