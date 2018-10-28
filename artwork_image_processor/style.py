@@ -1,8 +1,6 @@
 # =============================================================================
 #         PLACEHOLDER METHODS TO TRANSFORM AN IMAGE
-#           This version only does one iteration (not trained)
-# from: https://github.com/tensorflow/models/blob/master/
-#    research/nst_blogpost/4_Neural_Style_Transfer_with_Eager_Execution.ipynb
+#           This version only does grayscale
 # =============================================================================
 
 import os
