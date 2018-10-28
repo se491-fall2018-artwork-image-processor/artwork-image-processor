@@ -13,6 +13,7 @@ install:
     
 before_script:
     - python manage.py collectstatic
+    - yes
 
 #command to run tests
 script:
