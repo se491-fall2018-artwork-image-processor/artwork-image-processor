@@ -11,9 +11,7 @@ python:
 install:
     - pip install -r requirements.txt
     
-before_script:
-    - python manage.py collectstatic
-    - yes
+#before_script:
 
 #command to run tests
 script:
