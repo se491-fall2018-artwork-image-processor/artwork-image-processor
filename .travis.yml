@@ -11,7 +11,8 @@ python:
 install:
     - pip install -r requirements.txt
     
-#before_script: cd artwork-image-processor
+before_script:
+    - python manage.py collectstatic
 
 #command to run tests
 script:
