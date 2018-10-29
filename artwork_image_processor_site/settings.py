@@ -29,7 +29,6 @@ DEBUG = False
 # hosted websites 'art-processor.herokuapp.com'
 ALLOWED_HOSTS = ['art-ip.herokuapp.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
