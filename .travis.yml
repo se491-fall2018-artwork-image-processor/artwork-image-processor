@@ -11,7 +11,9 @@ python:
 install:
     - pip install -r requirements.txt
     
-#before_script: cd artwork-image-processor
+before_script:
+    - python manage.py migrate --run-syncdb
+    - python manage.py collectstatic --noinput
 
 #command to run tests
 script:
