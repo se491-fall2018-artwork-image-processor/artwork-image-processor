@@ -13,8 +13,7 @@ install:
     
 before_script:
     - python manage.py migrate
-    - python manage.py collectstatic
-    - yes
+    - python manage.py collectstatic --noinput
 
 #command to run tests
 script:
