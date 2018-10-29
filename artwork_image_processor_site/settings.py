@@ -26,6 +26,7 @@ SECRET_KEY = '@&n+hghx4ktg!%fr(qd-ve@!n03s3d*_x0k=d47z4@yag%eops'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# hosted websites 'art-processor.herokuapp.com'
 ALLOWED_HOSTS = ['art-ip.herokuapp.com']
 
 
