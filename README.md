@@ -20,6 +20,7 @@ Numpy 1.14.5
 Gunicorn 19.9.0
 Whitenoise 4.1
 Dj Database URL 0.5.0
+New Relic
 ```
 
 ### Installing
