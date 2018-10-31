@@ -11,10 +11,15 @@ These instructions will get you a copy of the project up and running on your loc
 TODO: What things you need to install the software and how to install them
 
 ```
-Python 3.6
+Python 3.6.6
 Django 2.1.2
-Tensorflow 1.10
+Tensorflow 1.11
 Bootstrap 4.1.3
+Pillow 5.3.0
+Numpy 1.14.5
+Gunicorn 19.9.0
+Whitenoise 4.1
+Dj Database URL 0.5.0
 ```
 
 ### Installing
