@@ -26,7 +26,7 @@ SECRET_KEY = '@&n+hghx4ktg!%fr(qd-ve@!n03s3d*_x0k=d47z4@yag%eops'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['art-processor.herokuapp.com','*']
+ALLOWED_HOSTS = ['art-processor.herokuapp.com']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 ]
 
