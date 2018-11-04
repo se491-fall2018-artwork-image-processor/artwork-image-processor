@@ -28,7 +28,7 @@ Dj Database URL 0.5.0
 3. Execute the `runserver` command to start the development server 
   - Ex: `python manage.py runserver <port>` 
   - The `runserver` command defaults to port `8000`
-4. In a browser, navigate to `http://localhost:<port>' to load the root webpage
+4. In a browser, navigate to `http://localhost:<port>` to load the root webpage
 
 ## Automated Test Suite
 
@@ -40,10 +40,10 @@ The project's automated tests are defined in the following files:
 
 | Test File                                                          | Description                                                |
 |--------------------------------------------------------------------|------------------------------------------------------------|
-| &lt;project-root&gt;/artwork_image_processor/tests/tests_forms.py  | Tests validating Django forms in the project               |
-| &lt;project-root&gt;/artwork_image_processor/tests/tests_models.py | Tests validating Django models in the project              |
-| &lt;project-root&gt;/artwork_image_processor/tests/tests_views.py  | Tests validating Django views in the project               |
-| &lt;project-root&gt;/artwork_image_processor/tests/tests_style.py  | Tests validating the Image Processing logic in the project |
+| &lt;project_root&gt;/artwork_image_processor/tests/tests_forms.py  | Tests validating Django forms in the project               |
+| &lt;project_root&gt;/artwork_image_processor/tests/tests_models.py | Tests validating Django models in the project              |
+| &lt;project_root&gt;/artwork_image_processor/tests/tests_views.py  | Tests validating Django views in the project               |
+| &lt;project_root&gt;/artwork_image_processor/tests/tests_style.py  | Tests validating the Image Processing logic in the project |
 
 ### Running the tests
 
@@ -54,6 +54,18 @@ python manage.py test
 ```
 
 The test suite is also run automatically as part of our pull-request process. A PR *cannot* be merged unless *all* tests are passing.
+
+### Generating a Code Coverage Report
+
+A code coverage report can be generated using the `Coverage.py` utility for python. It monitors your program, noting which parts of the code have been executed, then analyzes the source to identify code that could have been executed but was not.
+
+Coverage.py can be installed using `pip` or other python dependency management frameworks. Ex: `pip install coverage`
+
+Run the following commands at the project root to build and view the code coverage report for this project:
+```
+coverage run manage.py test
+coverage report
+```
 
 ## Deployment
 
@@ -87,8 +99,8 @@ This project is licensed under the GPL 3.0 License - see the [LICENSE.md](LICENS
 
 ## Acknowledgments
 
-TODO
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* For inspiration: 
+  * [Udacity - How to Process Images With TensorFlow - by Mat Leonard](https://blog.udacity.com/2018/04/how-to-process-images-with-tensorflow.html) 
+  * [How to Upload Files with Django - by Vitor Freitas](https://simpleisbetterthancomplex.com/tutorial/2016/08/01/how-to-upload-files-with-django.html)
+* 
 
