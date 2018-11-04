@@ -8,8 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-TODO: What things you need to install the software and how to install them
-
+These are the Python dependencies required to build and run the application:
 ```
 Python 3.6.6
 Django 2.1.2
@@ -20,21 +19,33 @@ Numpy 1.14.5
 Gunicorn 19.9.0
 Whitenoise 4.1
 Dj Database URL 0.5.0
-New Relic
 ```
 
-### Installing
+### Installing your Development Environment
 
-Navigate to the project root in your command line / terminal and run the `runserver` command to start the development server 
+1. Install all dependencies noted above
+2. Navigate to the project root in your command line / terminal 
+3. Execute the `runserver` command to start the development server 
+  - Ex: `python manage.py runserver <port>` 
+  - The `runserver` command defaults to port `8000`
+4. In a browser, navigate to `http://localhost:<port>' to load the root webpage
 
-```
-python manage.py runserver
-```
+## Automated Test Suite
 
-In a browser, navigate to `http://localhost:8000' to load the root webpage
+The project has a suite of automated tests that are built on top of the Django test framework, which is built on top of the *unittest* module built in to the Python standard library.
 
+### Test Files 
 
-## Running the tests
+The project's automated tests are defined in the following files:
+
+| Test File                                                          | Description                                                |
+|--------------------------------------------------------------------|------------------------------------------------------------|
+| &lt;project-root&gt;/artwork_image_processor/tests/tests_forms.py  | Tests validating Django forms in the project               |
+| &lt;project-root&gt;/artwork_image_processor/tests/tests_models.py | Tests validating Django models in the project              |
+| &lt;project-root&gt;/artwork_image_processor/tests/tests_views.py  | Tests validating Django views in the project               |
+| &lt;project-root&gt;/artwork_image_processor/tests/tests_style.py  | Tests validating the Image Processing logic in the project |
+
+### Running the tests
 
 Run the following commands to execute the test suite:
 
@@ -42,21 +53,7 @@ Run the following commands to execute the test suite:
 python manage.py test
 ```
 
-### Break down into end to end tests
-
-TODO: Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-TODO: Explain what these tests test and why
-
-```
-Give an example
-```
+The test suite is also run automatically as part of our pull-request process. A PR *cannot* be merged unless *all* tests are passing.
 
 ## Deployment
 
