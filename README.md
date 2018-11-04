@@ -32,7 +32,7 @@ Dj Database URL 0.5.0
 
 ## Automated Test Suite
 
-The project has a suite of automated tests that are built on top of the Django test framework, which is built on top of the *unittest* module built in to the Python standard library.
+The project has a suite of automated tests that are built on top of the Django test framework, which is built on top of the **unittest** module built in to the Python standard library.
 
 ### Test Files 
 
@@ -53,7 +53,7 @@ Run the following commands to execute the test suite:
 python manage.py test
 ```
 
-The test suite is also run automatically as part of our pull-request process. A PR *cannot* be merged unless *all* tests are passing.
+The test suite is also run automatically as part of our pull-request process. A PR **cannot** be merged unless **all** tests are passing.
 
 ### Generating a Code Coverage Report
 
@@ -73,15 +73,7 @@ TODO: Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-TODO: Create Contribution Guidelines
-
-Ex:
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-TODO: Create Versioning Guidelines
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Please read [CONTRIBUTING.md](https://github.com/se491-fall2018-artwork-image-processor/artwork-image-processor/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
@@ -91,7 +83,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Greg Zimmerman** - *Initial work* - [gjz999gitit](https://github.com/gjz999gitit)
 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/se491-fall2018-artwork-image-processor/artwork-image-processor/graphs/contributors) who participated in this project.
 
 ## License
 
