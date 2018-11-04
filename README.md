@@ -25,10 +25,12 @@ Dj Database URL 0.5.0
 
 1. Install all dependencies noted above
 2. Navigate to the project root in your command line / terminal 
-3. Execute the `runserver` command to start the development server 
+3. Execute the `collectstatic` command to populate the `staticfiles` directory
+  - Ex: `python manage.py collectstatic`
+4. Execute the `runserver` command to start the development server 
   - Ex: `python manage.py runserver <port>` 
   - The `runserver` command defaults to port `8000`
-4. In a browser, navigate to `http://localhost:<port>` to load the root webpage
+5. In a browser, navigate to `http://localhost:<port>` to load the root webpage
 
 ## Automated Test Suite
 
@@ -69,7 +71,21 @@ coverage report
 
 ## Deployment
 
-TODO: Add additional notes about how to deploy this on a live system
+Our current deployment environment is Heroku. We have a CI/CD Pipeline that will automatically deploy changes that are successfully merged into the **master** branch. 
+* Our live URL is: [https://art-processor.herokuapp.com/](https://art-processor.herokuapp.com/)
+
+The primary distinction between running the application locally vs in a deployment environment involves the management of the project's static files. We have configured the application to successfully deploy to our Heroku deployment environment, but there may be additional requirements in other deployment environments.
+
+For additional information on how to handle static files when deploying Django applications, see the following links:
+* [Django - Managing Static Files](https://docs.djangoproject.com/en/2.1/howto/static-files/)
+* [Django - Deploying Static Files](https://docs.djangoproject.com/en/2.1/howto/static-files/deployment/)
+* [Heroku - Django and Static Assets](https://devcenter.heroku.com/articles/django-assets)
+
+## Monitoring
+
+We are currently using two different monitoring solutions for our deployments:
+* [FreshPing - Uptime Monitoring](https://statuspage.freshping.io/1886-ArtProcessor/check/19770)
+* [New Relic APM](https://newrelic.com/)
 
 ## Contributing
 
