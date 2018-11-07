@@ -10,7 +10,8 @@ class Image(models.Model):
     imageFile = models.ImageField(upload_to='image_uploads/')
     image_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    
+    tags = models.CharField(max_length=500, blank=True)
+
     # for string representation
     def __str__(self):
         return self.description

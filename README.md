@@ -2,6 +2,8 @@
 
 This is a Django application that leverages the Tensorflow library to transfer painting styles onto images.
 
+The application also reaches out to the [PhotoTagger API](https://github.com/PhotoTagger/django-initial#api) to tag any uploaded images with classifcations based on what is in the image (Ex: dog, train, car, etc)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -25,12 +27,18 @@ Dj Database URL 0.5.0
 
 1. Install all dependencies noted above
 2. Navigate to the project root in your command line / terminal 
-3. Execute the `collectstatic` command to populate the `staticfiles` directory
+3. Execute the `migrate` command to create any necessary database tables
+  - Ex: `python manage.py migrate` 
+4. Execute the `collectstatic` command to populate the `staticfiles` directory
   - Ex: `python manage.py collectstatic`
-4. Execute the `runserver` command to start the development server 
+5. Execute the `runserver` command to start the development server 
   - Ex: `python manage.py runserver <port>` 
   - The `runserver` command defaults to port `8000`
-5. In a browser, navigate to `http://localhost:<port>` to load the root webpage
+6. In a browser, navigate to `http://localhost:<port>` to load the root webpage
+
+### Configuring PhotoTagger API Endpoint
+The PhotoTagger API endpoint can be configured by setting the `PHOTOTAGGER_CLASSIFY_API_ENDPOINT` variable in `settings.py`
+
 
 ## Automated Test Suite
 
@@ -46,6 +54,7 @@ The project's automated tests are defined in the following files:
 | &lt;project_root&gt;/artwork_image_processor/tests/tests_models.py | Tests validating Django models in the project              |
 | &lt;project_root&gt;/artwork_image_processor/tests/tests_views.py  | Tests validating Django views in the project               |
 | &lt;project_root&gt;/artwork_image_processor/tests/tests_style.py  | Tests validating the Image Processing logic in the project |
+| &lt;project_root&gt;/artwork_image_processor/tests/tests_tags.py  | Tests validating the Photo Tagger API Integration logic in the project |
 
 ### Running the tests
 
@@ -65,7 +74,7 @@ Coverage.py can be installed using `pip` or other python dependency management f
 
 Run the following commands at the project root to build and view the code coverage report for this project:
 ```
-coverage run manage.py test
+coverage run --source='.' manage.py test
 coverage report
 ```
 
