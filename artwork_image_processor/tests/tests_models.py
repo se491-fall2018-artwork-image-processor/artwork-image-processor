@@ -8,18 +8,13 @@ from django.test import TestCase
 from artwork_image_processor.models import Image
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-# Create your tests here.
-#    def test_whatever_list_view(self):
-#        w = self.create_whateve:qr()
-#        url = reverse("whatever.views.whatever")
-#        resp = self.client.get(url)
-#
-#        self.assertEqual(resp.status_code, 200)
-#        self.assertIn(w.title, resp.content)
-
-# to test our document model
+# Tests for our Image model
 class ModelTestCase(TestCase):
         
+        def test_image_tags(self):
+            img = Image(tags="test create tags")
+            self.assertEqual("test create tags", img.tags)
+    
         def test_image_description(self):
             img = Image(description="test create desc")
             self.assertEqual("test create desc", img.description)

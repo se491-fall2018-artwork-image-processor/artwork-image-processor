@@ -1,28 +1,55 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-  <h1>Artwork Image Processor</h1>
-  
-  <p>Leverages the Tensorflow library to transfer painting styles onto images!</p>
-  
-  {% load static %}
+  <div class="py-5 text-center">
+    <h1>Artwork Image Processor</h1>
+    <p>Leverages the Tensorflow library to transfer painting styles onto images!</p>
+
   <h1>
     <img src="{% static "example/example_unprocessed_image.jpg" %}" alt="Image" width="169" height="169" />
     <img src="{% static "example/example_style_artwork.jpg" %}" alt="Image" width="169" height="169" /> 
     <img src="{% static "example/example_processed_image.jpg" %}" alt="Image" width="169" height="169" />
   </h1>
+  </div>
 
-  <h1></h1>
-  <h1></h1>
+  <hr/>
 
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ imageForm.as_p }}
-    <button type="submit">Upload</button>
-  </form>
+  <div class="row">
+    <div class="mx-auto">
+      <h2>Submit image for classification and tagging: </h2> 
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ imageForm.as_p }}
+        <button type="submit">Upload</button>
+      </form>
+    </div> 
+  </div>
 
   {% if image %}
-  <img src="{{image.imageFile.url}}" height="200" width="250" border="1"/>
+    
+    <hr/>
+
+      <div class="row">
+        <div class="mx-auto">
+
+          <h2>Result: </h2>
+
+          <img src="{{ image.imageFile.url }}" height="200" width="250" border="1"/>
+
+          <dl class="dl-horizontal">
+
+            <dt>URL:</dt>
+            <dd><a href="{{ image.imageFile.url }}">{{ image.imageFile.name }}</a></dd>
+
+            <dt>Tags:</dt>
+            <dd>{{ image.tags }}</dd>
+
+          </dl>
+	</div>
+      </div>
+
+
   {% endif %}
 
 {% endblock %}

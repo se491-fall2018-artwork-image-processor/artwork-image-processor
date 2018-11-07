@@ -8,6 +8,7 @@ from artwork_image_processor.models import Image
 from artwork_image_processor.forms import ImageForm
 
 from artwork_image_processor.style import run_style_transfer
+from artwork_image_processor.tags import add_photo_tags
 
 # Create your views here.
 
@@ -17,8 +18,13 @@ def home(request):
         imageForm = ImageForm(request.POST, request.FILES)
         if imageForm.is_valid():
            
-            # the uploaded image is passed to the style transfer method
+            # Saving the imageForm commits the form data to the Image table
             uploadedImage = imageForm.save()
+
+            # Call out to Photo Tagger API to add image tags
+            uploadedImage = add_photo_tags(uploadedImage)
+
+            # The uploaded image is passed to the run_style_transfer method for styling
             styledImage = run_style_transfer(uploadedImage)
              
             content = {
@@ -33,7 +39,6 @@ def home(request):
     })
 
 def about(request):
-    print("--- Render: ABOUT ---")
     content = {}
     return render(request, 'about.html', content)
 
