@@ -29,10 +29,13 @@ def add_photo_tags(imgModel):
     # Parse json into python dictionary
     resp_json = json.loads(resp.text)
 
-    # Extract list of tags from json, then convert list to string of comma-separated vals
+    # Extract tags from first result
+    resp_json = resp_json['results'][0]['tags']
+
+    # Convert list to string of comma-separated vals
     # Save string to image model "tags" field
-    if resp_json['tags'] is not None:
-      imgModel.tags = ', '.join(resp_json['tags'])
+    if resp_json is not None:
+      imgModel.tags = ', '.join(resp_json)
       imgModel.save()
     
     return imgModel
