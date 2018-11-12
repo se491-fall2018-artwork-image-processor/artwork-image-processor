@@ -26,19 +26,13 @@ def add_photo_tags(imgModel):
     # Create a post request to Photo-tagger API
     resp = requests.post(PHOTOTAGGER_CLASSIFY_API_ENDPOINT, files=files)
 
-    print(resp.text)
-
     # Parse json into python dictionary
     resp_json = json.loads(resp.text)
 
-    # Extract first result
-    #output_dict = [x for x in resp_json if x['type'] == '1']
-
+    # Extract tags from first result
     resp_json = resp_json['results'][0]['tags']
 
-    print(resp_json)
-
-    # Extract list of tags from json, then convert list to string of comma-separated vals
+    # Convert list to string of comma-separated vals
     # Save string to image model "tags" field
     if resp_json is not None:
       imgModel.tags = ', '.join(resp_json)
