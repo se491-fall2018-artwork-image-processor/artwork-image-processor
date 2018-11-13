@@ -24,6 +24,7 @@ def run_style_transfer(img):
   # Create a new Image model object to hold styled image
   generatedImageModel = Image()
   generatedImageModel.description = img.description
+  generatedImageModel.tags = img.tags
   generatedImageModel.imageFile = generatedImageFile
   generatedImageModel.save()
   return generatedImageModel

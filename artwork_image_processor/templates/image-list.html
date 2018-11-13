@@ -1,15 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
+ 
+  <div class="py-5 text-center">
+    <h1>Uploaded Images</h1> 
+    <p>This page lists details for all uploaded images.</p> 
+  </div>
 
-  <p>Uploaded files:</p>
-  <ul>
-    {% for obj in images %}
-      <li>
-	<img src="{{ obj.imageFile.url }}" height="200" width="250" border="1"/>
-        <a href="{{ obj.imageFile.url }}">{{ obj.imageFile.name }}</a>
-        <small>(Uploaded at: {{ obj.uploaded_at }})</small>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="row">
+    <div class="mx-auto">
+
+      <ul class="list-group">
+        {% for obj in images %}
+          <li class="list-group-item">
+	    <img src="{{ obj.imageFile.url }}" height="200" width="250" border="1"/>
+	
+    	    <dl class="dl-horizontal">
+          
+	      <dt>URL:</dt>
+	      <dd><a href="{{ obj.imageFile.url }}">{{ obj.imageFile.name }}</a></dd>
+	  
+	      <dt>Tags:</dt>
+              <dd>{{ obj.tags }}</dd> 
+          
+              <dt>Uploaded at:</dt> 
+	      <dd>{{ obj.uploaded_at }}</dd>
+
+            </dl>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 {% endblock %}
