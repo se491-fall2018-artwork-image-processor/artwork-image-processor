@@ -1,6 +1,6 @@
 # Artwork Image Processor
 
-This is a Django application that leverages the Tensorflow library to transfer painting styles onto images. At this time (11/13/2018) there is an OpenCV placeholder method in the deployed application.
+This is a Django application that leverages a Deep Neural Net to transfer painting styles onto images.
 
 The application also reaches out to the [PhotoTagger API](https://github.com/PhotoTagger/django-initial#api) to tag any uploaded images with classifcations based on what is in the image (Ex: dog, train, car, etc)
 
@@ -14,7 +14,6 @@ These are the Python dependencies required to build and run the application:
 ```
 Python 3.6.6
 Django 2.1.2
-Note: Not used at this time (11/13/2018) Tensorflow 1.11
 Bootstrap 4.1.3
 Pillow 5.3.0
 Numpy 1.14.5

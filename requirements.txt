@@ -4,7 +4,6 @@
 # pygame
 pillow==5.3.0
 numpy==1.14.5
-tensorflow==1.11
 Django==2.1.2
 gunicorn==19.9.0
 whitenoise==4.1
